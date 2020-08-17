@@ -11,12 +11,12 @@ The dungeon constructor assigns one of its private variables to the goblin smell
 **void dungeon::createMap(int m_nRooms)** <br/>
 Initialize dungeon map by filling it with ‘#’ walls <br/>
 Create an array of new rooms with randomly generated number (m_nRooms) <br/>
-*For the amount of rooms:* <br/>
+For the amount of rooms: <br/>
 Set the coordinates of the rooms with its lengths and widths from, contained in each room struct <br/>
 Check if the randomly created rooms are valid; they are within bounds and do not overlap <br/>
 Set allocated rooms as blank spaces <br/>
 Sort rooms to create pathways connecting rooms <br/>
-*For the number of rooms created:* <br/>
+For the number of rooms created: <br/>
 Generate random starting point of corridor <br/>
 Compare rows and columns of sorted rooms to connect the corridor to a random point on another room as the end point <br/>
 Deallocate pointers of rooms <br/>
@@ -83,7 +83,7 @@ The player adds to his/her list of object pointers (inventory) with a ‘g’ in
 
 The monster class defines monster generalizations, such as checking if the player is in range (isInRange), choosing a direction (chooseDir), and maybe dropping an object if killed (drop). All of these functions take in dungeon pointers because they evaluate the contents of the current map they’re in. The drop function specifies what gets dropped by also taking in a pointer to the monster, to then evaluate its name to push back a new item to the dungeon’s object pointer list. Bogeymen, Snakewomen, Dragons, and Goblins are all derived from this base class. The monster class’s doSomething function is where the monsters will call their parent functions to either move to a spot closer to the player, or attack the player if possible. Thus, each monster has its own doSomething implementations.<br/>
 
-**bool monster::isInRange(dungeon *d, int dist)**<br/>
+**bool monster::isInRange(dungeon * d, int dist)** <br/>
 Define monster’s coordinates<br/>
 Define player’s coordinates<br/>
 Get row difference of player and monster<br/>
@@ -91,7 +91,7 @@ Get column difference of player and monster<br/>
 Add the row & column distances<br/>
 Returns true if the distance is less than or equal to the monster’s smell distance, false otherwise<br/>
 
-**bool monster::chooseDir(dungeon *d, int row, int col)**
+**bool monster::chooseDir(dungeon * d, int row, int col)** <br/>
 Set end coordinates as player’s coordinates<br/>
 Set start coordinates as monster’s coordinates<br/>
 	If monster’s row < player’s row and is movable<br/>
