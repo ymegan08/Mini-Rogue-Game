@@ -62,7 +62,7 @@ The player is newly created within the Game constructor, and the player takes in
 
 The dungeon only gets destructed when the Game gets destructed. Descending the stairs into the next level calls the dungeon’s deleteDungeon function which acts similarly to a constructor and destructor combined, but serves the ultimate purpose of maintaining the statistics of the player throughout the game. Thus, deleteDungeon removes the dynamically allocated objects and pointers while also incrementing the current level with new monster & object pointers.<br/>
 
-**void dungeon::deleteDungeon(Dungeon* d)**<br/>
+**void dungeon::deleteDungeon(Dungeon * d)**<br/>
 Increment the dungeon’s level<br/>
 Create and set random number of rooms<br/>
 Creates map template with rooms and corridors<br/>
@@ -120,7 +120,7 @@ If the goblin’s row is smaller than the player’s row<br/>
 		Push ARROW_LEFT to goblin’s direction queue<br/>
 There is no path: return false<br/>
 
-**bool goblin::doSomething(dungeon* d)**<br/><br/>
+**bool goblin::doSomething(dungeon * d)**<br/><br/>
 If asleep, decrease sleep time<br/>
 If dead, or the player is dead, return nothing<br/>
 Call recursive function:goblinSmell with goblin’s coordinates & smell distance<br/>
